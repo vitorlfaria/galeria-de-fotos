@@ -41,6 +41,10 @@ export const Header = styled.div`
         }   
     }
 
+    .mobile-menu {
+        display: none;
+    }
+
     @media only screen and (max-width: 770px){
         padding: 0 1em;
 
