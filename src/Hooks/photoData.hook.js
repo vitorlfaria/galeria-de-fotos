@@ -21,11 +21,4 @@ export default function GetPhotos() {
 
     const fotos = photoData.photos
     console.log(fotos)
-
-    return(
-        <li>
-            
-        </li>      
-    )
-
 }
