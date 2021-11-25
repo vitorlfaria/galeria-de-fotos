@@ -63,6 +63,7 @@ export const Header = styled.div`
         }
 
         .mobile-menu {
+            display: block;
             position: absolute;
             top: 0;
             right: 0;
