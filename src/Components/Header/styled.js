@@ -68,7 +68,8 @@ export const Header = styled.div`
             border-radius: 1.5em 0 0 1.5em ;
             z-index: 100;
             padding-top: 4em;
-            box-shadow: 0 0 0 200em rgba(0,0,0,.5);
+            box-shadow: 0 0 0 200em rgba(0,0,0,0);
+            transform: translate(100%);
 
             .bars {
                 position: absolute;
@@ -85,8 +86,8 @@ export const Header = styled.div`
         }
 
         .ativo {
-            transform: translate(100%);
-            box-shadow: 0 0 0 200em rgba(0,0,0,0);
+            transform: translate(0%);
+            box-shadow: 0 0 0 200em rgba(0,0,0,.5);
         }
     }
 
