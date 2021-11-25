@@ -1,10 +1,18 @@
-import styled from 'styled-components'
+import React from 'react'
+import { FooterComponent } from '../src/Components/Footer'
+import HeaderComponent from '../src/Components/Header'
+import PhotoList from '../src/Components/PhotoList'
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
 
 export default function Home() {
-  return <Title>My page</Title>
+
+  return (
+    <>
+      <HeaderComponent />
+
+      <PhotoList />
+
+      <FooterComponent />
+    </>
+  )
 }
