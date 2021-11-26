@@ -17,7 +17,7 @@ export default function PhotoList() {
 
     const getPhotoData = async () => {
 
-        const data = await fetch('https://api.pexels.com/v1/curated?page=1&per_page=12', {
+        const data = await fetch('https://api.pexels.com/v1/search?query=golden_retriever&page=1&per_page=12', {
             headers: {
                 Authorization: API_KEY
             }
