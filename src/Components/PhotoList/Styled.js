@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { FaSearch } from "react-icons/fa";
 
 export const PhotoContainer = styled.div`
     width: 80%;
     margin: 0 auto;
-    padding: 5em 0;
+    padding: 5em 0 2em;
     position: relative;
 
     display: grid;
@@ -17,9 +18,16 @@ export const PhotoContainer = styled.div`
 
         input {
             outline: none;
-            border: solid 2px #ccc;
+            border: solid 2px #1b2a4a;
             border-radius: 10em;
-            padding: .5em 0 .5em .8em;
+            padding: .5em 5em .5em 1em;
+        }
+        .search {
+            font-size: 1.2em;
+            color: #1b2a4a;
+            position: absolute;
+            top: .3em;
+            right: .7em;
         }
     }
 `
@@ -30,15 +38,8 @@ export const PhotoBox = styled.div`
     background-color: #ccc;
     position: relative;
     box-shadow: 0 0 20px #ccc;
-    margin: 1em;
 
     overflow: hidden;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
     &::before {
         content: ""; // ::before and ::after both require content
@@ -55,7 +56,8 @@ export const PhotoBox = styled.div`
         bottom: 1em;
         left: 0;
         color: #fff;
-        font-weight: 300;
+        font-weight: 500;
+        text-shadow: .1em .1em .3em #000;
         opacity: 0;
         transition: 400ms ease;
     }
@@ -64,4 +66,17 @@ export const PhotoBox = styled.div`
         opacity: 1;
         left: 1em;
     }
+`
+
+export const Button = styled.button`
+    margin: 0 auto;
+    padding: .7em 5em;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    border-radius: .4em;
+    background-color: #1b2a4a;
+    margin-bottom: 3em;
+    cursor: pointer;
 `

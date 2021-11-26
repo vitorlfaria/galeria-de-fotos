@@ -1,22 +1,25 @@
 import React from 'react'
-import { PhotoContainer, PhotoBox } from "./Styled";
+import { PhotoContainer, PhotoBox, Button } from "./Styled";
 import { useState, useEffect } from "react";
 import Image from 'next/image'
 
 
 export default function PhotoList() {
 
+    const API_KEY = '563492ad6f9170000100000192c395ea547f40fca590667bf91e8441'
+
+    // Fetch da api de fotos
     const [photoData, setPhotoData] = useState([])
 
     useEffect(() => {
-        getData()
+        getPhotoData()
     }, [])
 
-    const getData = async () => {
+    const getPhotoData = async () => {
 
-        const data = await fetch('https://api.pexels.com/v1/curated?per_page=12', {
+        const data = await fetch('https://api.pexels.com/v1/curated?page=1&per_page=12', {
             headers: {
-                'Authorization': '563492ad6f9170000100000192c395ea547f40fca590667bf91e8441'
+                Authorization: API_KEY
             }
         })
         const convert = await data.json()
@@ -26,76 +29,21 @@ export default function PhotoList() {
     return (
         <>
             <PhotoContainer>
-                <form>
-                <input type="text" placeholder="Buscar imagens" />
-                </form>
-
-                    <PhotoBox>
-                    {
-                        photoData.map((pic) => (
-                            <Image src={pic.src.portrait} height={600} width={400} alt={pic.url}/>
-                        ))                        
-                    }
+                {
+                photoData.map((pic) => (
+                    <PhotoBox key={pic.id}>
+                        <Image 
+                            src={pic.src.portrait} 
+                            width={400}
+                            height={600}
+                            layout='responsive'
+                            alt={pic.url}/>
+                        <h3>{pic.photographer}</h3>
                     </PhotoBox>
-
-                {/* <PhotoBox>
-                    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/3397939/pexels-photo-3397939.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/1870301/pexels-photo-1870301.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/752383/pexels-photo-752383.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/2759564/pexels-photo-2759564.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/546228/pexels-photo-546228.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/1959053/pexels-photo-1959053.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox>
-                <PhotoBox>
-                    <img src="https://images.pexels.com/photos/3397939/pexels-photo-3397939.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    <h3>Artista</h3>
-                </PhotoBox> */}
+                ))
+                }
             </PhotoContainer>
+            <Button>mostrar mais</Button>
         </>
     )
 }
-
-export async function getServerSideProps() {
-    const data = await getData();
-    return {
-      props: {
-        data,
-      },
-    };
-  }
