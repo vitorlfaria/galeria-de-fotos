@@ -1,12 +1,11 @@
 import { Header } from "./styled"
-import { FaBars, FaTimes } from 'react-icons/fa'
 import { useState } from "react"
+import { FaBars, FaTimes } from "react-icons/fa"
 
 export default function HeaderComponent() {
 
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
-    const closeMobileMenu = () => setClick(false)
 
     return (
         <Header>            

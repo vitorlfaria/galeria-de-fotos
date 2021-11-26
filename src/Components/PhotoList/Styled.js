@@ -30,6 +30,7 @@ export const PhotoBox = styled.div`
     background-color: #ccc;
     position: relative;
     box-shadow: 0 0 20px #ccc;
+    margin: 1em;
 
     overflow: hidden;
 
