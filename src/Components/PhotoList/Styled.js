@@ -69,7 +69,7 @@ export const PhotoBox = styled.div`
 `
 
 export const Button = styled.button`
-    margin: 3em auto;
+    margin: 3em 1em;
     padding: .7em 5em;
     font-size: 1rem;
     font-weight: 700;
@@ -78,4 +78,25 @@ export const Button = styled.button`
     border-radius: .4em;
     background-color: #1b2a4a;
     cursor: pointer;
+    position: relative;
+
+    .iconPrev {
+        position: absolute;
+        font-size: 1.8rem;
+        top: 0.17em;
+        left: 1em;
+    }
+
+    .iconNext {
+        position: absolute;
+        font-size: 1.8rem;
+        top: 0.17em;
+        right: 1em;
+    }
+`
+
+export const BtnWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
 `
