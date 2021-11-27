@@ -8,6 +8,7 @@ export const Header = styled.div`
     border-bottom: solid 2px #ccc;
     box-shadow: 0 10px 50px #ccc;
     padding: 0 10em;
+    margin-bottom: 5em;
     position: relative;
     
     display: flex;

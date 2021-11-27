@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 export const PhotoContainer = styled.div`
     width: 80%;
     margin: 0 auto;
-    padding: 5em 0 2em;
+    padding: 10px 0 0;
     position: relative;
 
     display: grid;
@@ -69,7 +69,7 @@ export const PhotoBox = styled.div`
 `
 
 export const Button = styled.button`
-    margin: 0 auto;
+    margin: 3em auto;
     padding: .7em 5em;
     font-size: 1rem;
     font-weight: 700;
@@ -77,6 +77,5 @@ export const Button = styled.button`
     border: none;
     border-radius: .4em;
     background-color: #1b2a4a;
-    margin-bottom: 3em;
     cursor: pointer;
 `

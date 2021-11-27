@@ -6,6 +6,56 @@ import Image from 'next/image'
 
 export default function PhotoList() {
 
+    const API_KEY = '563492ad6f9170000100000192c395ea547f40fca590667bf91e8441'
+
+    const [photoData, setPhotoData] = useState([])
+    const [pageIndex, setPageIndex] = useState([])
+
+
+    useEffect(() => {
+        getPhotoData()
+    }, [])
+
+
+
+    const getPhotoData = async (pageIndex) => {
+
+        const baseURL = `https://api.pexels.com/v1/search?query=golden_retriever&page=${pageIndex}&per_page=12`
+
+
+        const data = await fetch(baseURL, {
+            headers: {
+                Authorization: API_KEY
+            }
+        })
+        const convert = await data.json()
+        setPhotoData(convert.photos)
+    }
+
+    //____________________________________________________________________________________________
+
+    const [photoList, setPhotoList] = useState([])
+
+    const handleLoadMore = () => {
+        setPageIndex(pageIndex+1)
+
+        const getLoadData = (pageIndex) => {
+
+            const baseURL = `https://api.pexels.com/v1/search?query=golden_retriever&page=${pageIndex}&per_page=12`
+    
+    
+            const data = fetch(baseURL, {
+                headers: {
+                    Authorization: API_KEY
+                }
+            })
+            const convert = data.json()
+            setPhotoData(convert.photos)
+        }
+
+        setPhotoList(photoList.concat(<Photos key={photoList.length} />))
+    }
+
     const Photos = () => {
         return <PhotoContainer>
             {
@@ -24,35 +74,7 @@ export default function PhotoList() {
         </PhotoContainer>
     }
 
-    const API_KEY = '563492ad6f9170000100000192c395ea547f40fca590667bf91e8441'
-
-    const [photoData, setPhotoData] = useState([])
-    const [pageIndex, setPageIndex] = useState(1)
-    const [photoList, setPhotoList] = useState([])
-
-    useEffect(() => {
-        getPhotoData(pageIndex)
-    }, [])
-
-    const getPhotoData = async (pageIndex) => {
-
-        const baseURL = `https://api.pexels.com/v1/search?query=golden_retriever&page=${pageIndex}&per_page=12`
-
-
-        const data = await fetch(baseURL, {
-            headers: {
-                Authorization: API_KEY
-            }
-        })
-        const convert = await data.json()
-        setPhotoData(convert.photos)
-    }
-
-    const handleLoadMore = () => {
-        setPageIndex(pageIndex+1)
-        getPhotoData()
-        setPhotoList(photoList.concat(<Photos key={photoList.length} />))
-    }
+    //____________________________________________________________________________________________
 
     return (
         <>
