@@ -11,6 +11,7 @@ export default function Home() {
     <>
       <Head>
         <title>Album de Fotos</title>
+        <link rel='icon' href="https://i.imgur.com/nAmILPL.png" />
       </Head>
       <HeaderComponent />
 

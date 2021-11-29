@@ -8,8 +8,10 @@ export default function HeaderComponent() {
     const handleClick = () => setClick(!click)
 
     return (
-        <Header>            
-            <img src="https://i.imgur.com/Ok9dQZV.png" alt="Logo" />
+        <Header>
+            <a href="/">        
+            <img src="https://i.imgur.com/9Bwjd3z.png" alt="Logo" />
+            </a>
 
             <FaBars className="bars" onClick={handleClick} />
 

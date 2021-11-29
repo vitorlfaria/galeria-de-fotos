@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Body = styled.div`
     min-height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `
 
 export const LinkWrapper = styled.div`
@@ -37,6 +40,14 @@ export const LinkWrapper = styled.div`
         top: .5em;
         right: .5em;
     }
+
+    @media only screen and (max-width: 768px) {
+        width: 80%;
+    }
+
+    @media only screen and (max-width: 425px) {
+        width: 90%;
+    }
 `
 
 export const PhotoBox = styled.div`
@@ -45,4 +56,12 @@ export const PhotoBox = styled.div`
     margin: 1em auto 3em;
     border-radius: 1em;
     box-shadow: 0 0 20px #ccc;
+    
+    @media only screen and (max-width: 768px) {
+        width: 80%;
+    }
+
+    @media only screen and (max-width: 425px) {
+        width: 90%;
+    }
 `
