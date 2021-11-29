@@ -1,7 +1,7 @@
 import { Footer } from "./styled";
 
 
-export function FooterComponent() {
+export default function FooterComponent() {
     return (
         <Footer />
     )
