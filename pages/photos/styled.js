@@ -40,7 +40,7 @@ export const LinkWrapper = styled.div`
 `
 
 export const PhotoBox = styled.div`
-    width: 80%;
+    width: 50%;
     overflow: hidden;
     margin: 1em auto 3em;
     border-radius: 1em;
