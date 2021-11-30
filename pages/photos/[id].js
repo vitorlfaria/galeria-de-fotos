@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Body, LinkWrapper, PhotoBox } from './styled'
+import { Body, LinkWrapper, PhotoBox } from '../../src/libs/Styles/photos'
 import { getPhotoID } from '../api/api'
 import HeaderComponent from '../../src/Components/Header'
 import FooterComponent from '../../src/Components/Footer'
