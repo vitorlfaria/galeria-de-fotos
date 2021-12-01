@@ -18,8 +18,8 @@ export default function FooterComponent() {
         </Footer>
         <UnderFooter>
             <p>Projeto criado por utilizando 
-                <a href="https://nextjs.org/"> ReactJS/NextJS</a> e 
-                <a href="https://www.pexels.com/pt-br/api/"> Pexels API</a>
+                <a href="https://nextjs.org/" target="_blank"> ReactJS/NextJS</a> e 
+                <a href="https://www.pexels.com/pt-br/api/" target="_blank"> Pexels API</a>
             </p>
         </UnderFooter>
         </>
