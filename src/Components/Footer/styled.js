@@ -5,7 +5,7 @@ export const Footer = styled.div`
     height: 10em;
     background-color: #1b2a4a;
     border-top: solid 2px #071126;
-    padding: 0 10em;
+    padding: 0 11em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,6 +37,19 @@ export const Footer = styled.div`
             }
         }
     }
+
+    @media only screen and (max-width: 768px){
+        padding: 0 3em;
+    }
+
+    @media only screen and (max-width: 425px){
+        padding: 1em;
+
+        img {
+            margin-left: 1em;
+            width: 4em;
+        }
+    }
 `
 
 export const UnderFooter = styled.div`
@@ -53,6 +66,12 @@ export const UnderFooter = styled.div`
         a {
             text-decoration: none;
             color: #0cc1f7;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        p {
+            font-size: .75rem;
         }
     }
 `

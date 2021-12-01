@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const PhotoContainer = styled.div`
     width: 80%;
+    max-width: 80em;
     margin: 0 auto;
     padding: 10px 0 0;
     position: relative;
@@ -10,24 +11,9 @@ export const PhotoContainer = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 10px;
 
-    form {
-        position: absolute;
-        right: 0;
-        top: 2em;
-
-        input {
-            outline: none;
-            border: solid 2px #1b2a4a;
-            border-radius: 10em;
-            padding: .5em 5em .5em 1em;
-        }
-        .search {
-            font-size: 1.2em;
-            color: #1b2a4a;
-            position: absolute;
-            top: .3em;
-            right: .7em;
-        }
+    @media (max-width: 425px){
+        width: 90%;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 `
 
@@ -104,6 +90,7 @@ export const BtnWrapper = styled.div`
 
 export const Form = styled.form`
     width: 80%;
+    max-width: 80em;
     margin: 0 auto;
     display: flex;
     flex-direction: row-reverse;
@@ -121,5 +108,11 @@ export const Form = styled.form`
         top: .55em;
         right: 1em;
         color: #1b2a4a;
+    }
+
+    @media (max-width: 425px){
+        input{
+            width: 100%;
+        }
     }
 `
