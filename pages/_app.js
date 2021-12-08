@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     font: 1rem Montserrat, sans-serif;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 
   * {
